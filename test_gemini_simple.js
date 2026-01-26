@@ -1,7 +1,7 @@
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const apiKey = "AIzaSyD3GcHeUK7aZiFttMeRZ_LX7kOBvhjQ1f8";
+const apiKey = process.env.VITE_GEMINI_API_KEY || "YOUR_API_KEY_HERE";
 
 console.log("Testing API Key:", apiKey ? "Found key ending in " + apiKey.slice(-4) : "Not Found");
 
