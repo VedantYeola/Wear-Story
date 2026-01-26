@@ -1,6 +1,6 @@
 <div align="center">
 
-# Weare~Story●™
+# Wear~Story●™
 
 ### *Every Chapter, Curated.*
 
@@ -8,10 +8,12 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.2.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Supabase-Database-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.io/)
+[![Gemini](https://img.shields.io/badge/Gemini-AI_Stylist-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
 **A premium AI-powered fashion e-commerce platform that redefines online shopping with personalized styling and luxury aesthetics.**
 
-[Live Demo](#) • [Features](#features) • [Tech Stack](#tech-stack) • [Getting Started](#getting-started)
+[Explore Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Contributing](#-contributing)
 
 </div>
 
@@ -27,6 +29,7 @@ Meet **Lumi**, your AI fashion assistant powered by Google Gemini. Get personali
 - **Shopping Cart & Wishlist** with persistent local storage
 - **Secure Checkout** with transaction ID logging (PCI-DSS compliant)
 - **Product Quick View** with detailed modals and styling suggestions
+- **Mobile Responsive Design** for shopping on the go
 
 ### 🔐 **Premium Authentication**
 Custom-designed Clerk authentication with:
@@ -39,20 +42,14 @@ Custom-designed Clerk authentication with:
 - Product management (CRUD operations)
 - Activity log monitoring (50 most recent entries)
 - Real-time inventory updates via Supabase
-- Secure admin access
+- Secure admin access with mobile-responsive layout
 
 ### 🎨 **Luxury Brand Identity**
-- Animated brand name reveal: **Weare~Story●™**
-- Golden accent colors (#D4AF37)
+- Animated brand name reveal: **Wear\~Story●™**
+- Golden accent colors (`#D4AF37`)
 - Serif typography (Playfair Display)
 - Smooth animations and transitions
 - Responsive design for all devices
-
-### 📄 **Informational Pages**
-- **About**: Brand story and mission
-- **Collections**: Category showcase
-- **Contact**: Business information and contact form
-- **Privacy Policies**: Comprehensive privacy information
 
 ---
 
@@ -140,7 +137,7 @@ weare-story/
 ├── services/            # Backend integrations
 │   ├── geminiService.ts # AI service
 │   ├── supabase.ts      # Database client
-│   └── loggingService.ts # Activity logging
+│   ├── loggingService.ts # Activity logging
 ├── utils/               # Helper functions
 ├── types.ts             # TypeScript definitions
 ├── constants.ts         # App constants
@@ -161,12 +158,7 @@ Only transaction IDs are stored - no sensitive card data is ever saved.
 Gemini AI analyzes user queries and product catalog to provide intelligent styling advice.
 
 ### Responsive Design
-Fully optimized for desktop, tablet, and mobile devices.
-
-### Performance Optimized
-- Lazy loading for images
-- Efficient state management
-- Optimized bundle size with Vite
+Fully optimized for desktop, tablet, and mobile devices, including the admin dashboard and AI stylist.
 
 ---
 
@@ -182,7 +174,7 @@ Fully optimized for desktop, tablet, and mobile devices.
 
 ## 🎨 Design Philosophy
 
-Weare-Story embodies luxury fashion through:
+Wear-Story embodies luxury fashion through:
 - **Minimalist Elegance**: Clean layouts with purposeful whitespace
 - **Premium Typography**: Serif fonts for sophistication
 - **Golden Accents**: Subtle luxury touches
@@ -196,7 +188,7 @@ Weare-Story embodies luxury fashion through:
 **Default Admin Credentials:**
 - Password: `admin123`
 
-Access the admin panel via the footer link.
+Access the admin panel via the footer link or navigate to the admin section if configured.
 
 ---
 
@@ -230,10 +222,10 @@ This project is licensed under the MIT License.
 
 <div align="center">
 
-### Made with ❤️ by [Your Name]
+### Made with ❤️ by Wear-Story Team
 
-**Weare~Story●™** - *Wear Your Story*
+**Wear~Story●™** - *Wear Your Story*
 
-[⬆ Back to Top](#wearestory)
+[⬆ Back to Top](#wearstory)
 
 </div>

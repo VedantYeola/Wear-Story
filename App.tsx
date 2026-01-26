@@ -247,12 +247,12 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
   if (currentView === 'about') {
     return (
       <div className="min-h-screen bg-white">
-        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} />
+        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} onNavigate={setCurrentView} />
         <div className="max-w-4xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-serif font-bold mb-8">
             About {' '}
             <span className="inline-block">
-              {'Weare-Story.'.split('').map((char, index) => {
+              {'Wear-Story.'.split('').map((char, index) => {
                 if (char === '-') {
                   return (
                     <span
@@ -288,7 +288,7 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
           </h1>
           <div className="prose prose-lg">
             <p className="text-gray-600 leading-relaxed mb-6">
-              Weare~Story is more than just a fashion brand—it's a celebration of individuality and self-expression. Founded with the belief that every person has a unique story to tell, we curate timeless pieces that empower you to wear your narrative with confidence.
+              Wear~Story is more than just a fashion brand—it's a celebration of individuality and self-expression. Founded with the belief that every person has a unique story to tell, we curate timeless pieces that empower you to wear your narrative with confidence.
             </p>
             <p className="text-gray-600 leading-relaxed mb-6">
               Our collections blend classic elegance with contemporary design, ensuring that each garment not only looks exceptional but feels extraordinary. From sustainable sourcing to meticulous craftsmanship, we're committed to quality that lasts.
@@ -309,7 +309,7 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
   if (currentView === 'collections') {
     return (
       <div className="min-h-screen bg-white">
-        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} />
+        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} onNavigate={setCurrentView} />
         <div className="max-w-6xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-serif font-bold mb-12 text-center">Our Collections</h1>
           <div className="grid md:grid-cols-2 gap-8">
@@ -335,14 +335,14 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
   if (currentView === 'contact') {
     return (
       <div className="min-h-screen bg-white">
-        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} />
+        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} onNavigate={setCurrentView} />
         <div className="max-w-4xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-serif font-bold mb-8">Contact Us</h1>
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
               <div className="space-y-4 text-gray-600">
-                <p><strong>Email:</strong> hello@wearestory.com</p>
+                <p><strong>Email:</strong> hello@wearstory.com</p>
                 <p><strong>Phone:</strong> +1 (555) 123-4567</p>
                 <p><strong>Address:</strong> 123 Fashion Ave, New York, NY 10001</p>
                 <p><strong>Hours:</strong> Mon-Fri 9AM-6PM EST</p>
@@ -372,25 +372,25 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
   if (currentView === 'privacy') {
     return (
       <div className="min-h-screen bg-white">
-        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} />
+        <Navbar cartItems={cartItems} wishlistCount={wishlistItems.length} onOpenCart={() => setIsCartOpen(true)} onOpenWishlist={() => setIsWishlistOpen(true)} onOpenAi={() => setIsAiOpen(!isAiOpen)} onGoHome={() => setCurrentView('store')} onSignInClick={() => setCurrentView('brand_login')} enableAuth={isAuthEnabled} onNavigate={setCurrentView} />
         <div className="max-w-4xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-serif font-bold mb-8">Privacy Policies</h1>
           <div className="prose prose-lg space-y-6 text-gray-600">
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
-              <p>Weare-Story collects information you provide directly to us, including name, email address, and payment information when you make a purchase.</p>
+              <p>Wear-Story collects information you provide directly to us, including name, email address, and payment information when you make a purchase.</p>
             </section>
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">How We Use Your Information</h2>
-              <p>Weare-Story uses the information we collect to process your orders, communicate with you, and improve our services.</p>
+              <p>Wear-Story uses the information we collect to process your orders, communicate with you, and improve our services.</p>
             </section>
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security</h2>
-              <p>Weare-Story implements appropriate security measures to protect your personal information. Payment details are processed securely and we never store full credit card information.</p>
+              <p>Wear-Story implements appropriate security measures to protect your personal information. Payment details are processed securely and we never store full credit card information.</p>
             </section>
             <section>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Rights</h2>
-              <p>You have the right to access, correct, or delete your personal information. Contact Weare-Story at privacy@wearestory.com for any requests.</p>
+              <p>You have the right to access, correct, or delete your personal information. Contact Wear-Story at privacy@wearstory.com for any requests.</p>
             </section>
           </div>
           <button onClick={() => setCurrentView('store')} className="mt-8 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">
@@ -412,6 +412,7 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
         onGoHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         onSignInClick={() => setCurrentView('brand_login')}
         enableAuth={isAuthEnabled}
+        onNavigate={setCurrentView}
       />
 
       <main>
@@ -598,7 +599,7 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
                   <Logo className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-2xl font-serif font-bold">
-                  {'Weare-Story.'.split('').map((char, index) => {
+                  {'Wear-Story.'.split('').map((char, index) => {
                     if (char === '-') {
                       return (
                         <span
@@ -642,7 +643,7 @@ function Store({ user, isAuthEnabled = false }: { user: any, isAuthEnabled?: boo
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col items-center gap-2">
-            <p>&copy; 2024 Weare-Story Inc. All rights reserved.</p>
+            <p>&copy; 2024 Wear-Story Inc. All rights reserved.</p>
             <button onClick={() => setIsAdminOpen(true)} className="text-gray-400 hover:text-white transition-colors flex items-center gap-1 mt-2">
               <span className="text-[10px] uppercase tracking-wider font-semibold">Admin Panel</span>
             </button>

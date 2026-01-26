@@ -83,7 +83,7 @@ export const AiStylist: React.FC<AiStylistProps> = ({ isOpen, onClose, products 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 w-[90vw] sm:w-96 h-[600px] max-h-[80vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300">
+    <div className="fixed bottom-0 sm:bottom-4 right-0 sm:right-4 z-50 w-full sm:w-96 h-[100vh] sm:h-[600px] max-h-[100vh] sm:max-h-[80vh] flex flex-col bg-white sm:rounded-2xl shadow-2xl border-t sm:border border-gray-200 overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300">
       {/* Header */}
       <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-4 flex items-center justify-between text-white">
         <div className="flex items-center gap-2">

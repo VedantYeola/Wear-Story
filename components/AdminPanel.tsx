@@ -191,8 +191,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Admin Header */}
-            <header className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center sticky top-0 z-30">
-                <div className="flex items-center gap-4">
+            <header className="bg-white border-b border-gray-200 px-4 sm:px-6 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center sticky top-0 z-30 gap-4">
+                <div className="flex items-center justify-between w-full sm:w-auto gap-4">
                     <h1 className="text-xl font-bold font-serif text-gray-900">Store Admin</h1>
                     <div className="flex gap-2">
                         <button
@@ -209,22 +209,22 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                         </button>
                     </div>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 w-full sm:w-auto">
                     {!isAdding && activeTab === 'products' && (
-                        <Button onClick={() => { resetForm(); setIsAdding(true); }} className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                        <Button onClick={() => { resetForm(); setIsAdding(true); }} className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2 flex-1 sm:flex-initial justify-center">
                             <Plus className="h-4 w-4" /> Add Product
                         </Button>
                     )}
-                    <Button onClick={onBack} variant="outline" className="flex items-center gap-2">
+                    <Button onClick={onBack} variant="outline" className="flex items-center gap-2 flex-1 sm:flex-initial justify-center">
                         <LogOut className="h-4 w-4" /> Exit
                     </Button>
                 </div>
             </header>
 
-            <main className="max-w-7xl mx-auto p-6 flex gap-6">
+            <main className="max-w-7xl mx-auto p-4 sm:p-6 flex flex-col lg:flex-row gap-6">
                 {/* Editor Sidebar (Conditional) - Only for Products Tab */}
                 {isAdding && activeTab === 'products' && (
-                    <div className="w-96 bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-fit sticky top-24">
+                    <div className="w-full lg:w-96 bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-fit relative lg:sticky lg:top-24 order-first lg:order-last">
                         <div className="flex justify-between items-center mb-6">
                             <h3 className="font-bold text-lg">{isEditing ? 'Edit Product' : 'New Product'}</h3>
                             <button onClick={resetForm} className="p-1 hover:bg-gray-100 rounded-full">
@@ -303,10 +303,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                 )}
 
                 {/* Main Content Area */}
-                <div className="flex-1">
+                <div className="flex-1 w-full overflow-hidden">
                     {activeTab === 'products' ? (
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                            <table className="w-full text-left">
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden overflow-x-auto">
+                            <table className="w-full text-left min-w-[600px]">
                                 <thead className="bg-gray-50 border-b border-gray-200">
                                     <tr>
                                         <th className="px-6 py-3 text-xs font-bold text-gray-500 uppercase">Product</th>
@@ -360,8 +360,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
                             )}
                         </div>
                     ) : (
-                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                            <table className="w-full text-left">
+                        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden overflow-x-auto">
+                            <table className="w-full text-left min-w-[800px]">
                                 <thead className="bg-gray-50 border-b border-gray-200">
                                     <tr>
                                         <th className="px-6 py-3 text-xs font-bold text-gray-500 uppercase">User</th>

@@ -57,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopNow }) => {
   };
 
   return (
-    <div className="relative bg-gray-900 overflow-hidden h-[600px] group">
+    <div className="relative bg-gray-900 overflow-hidden h-[calc(100vh-4rem)] sm:h-[600px] group">
       {SLIDES.map((slide, index) => (
         <div
           key={slide.id}
@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopNow }) => {
 
           {/* Content */}
           <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
-            <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100">
+            <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100 mt-[-2rem] sm:mt-0">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white tracking-tight mb-6 leading-tight drop-shadow-md">
                 {slide.title}
               </h1>
@@ -84,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onShopNow }) => {
                 {slide.description}
               </p>
               <div className="flex gap-4">
-                <Button onClick={onShopNow} size="lg" className="bg-white !text-black hover:bg-gray-100 border-none font-bold shadow-lg">
+                <Button onClick={onShopNow} size="lg" className="bg-white !text-black hover:bg-gray-100 border-none font-bold shadow-lg w-full sm:w-auto">
                   {slide.cta} <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>

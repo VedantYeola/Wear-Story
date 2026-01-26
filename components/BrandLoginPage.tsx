@@ -7,7 +7,7 @@ interface BrandLoginPageProps {
 }
 
 export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
-    const brandName = "Weare-Story";
+    const brandName = "Wear-Story";
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -23,16 +23,14 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             const titleElement = document.querySelector('.cl-headerTitle');
-            if (titleElement && titleElement.textContent?.includes('-')) {
-                const text = titleElement.textContent;
-                const parts = text.split('-');
-                // Replace hyphen with tilde and make the dot golden
-                const secondPart = parts[1].replace('.', '<span style="color: #D4AF37;">.</span>');
-                titleElement.innerHTML = parts[0] + '<span style="color: #D4AF37; font-size: 0.7em; transform: translateY(-0.15em) rotate(-10deg); display: inline-block; margin: 0 0.5rem; font-family: serif;">~</span>' + secondPart;
+            if (titleElement && (titleElement.textContent?.includes('-') || titleElement.textContent?.includes('Weare'))) {
+                // Enforce "Wear" spelling regardless of what Clerk Dashboard sends (e.g. "Weare")
+                const secondPart = "Story<span style=\"color: #D4AF37;\">.</span>";
+                titleElement.innerHTML = 'Wear' + '<span style="color: #D4AF37; font-size: 0.7em; transform: translateY(-0.15em) rotate(-10deg); display: inline-block; margin: 0 0.5rem; font-family: serif;">~</span>' + secondPart;
                 clearInterval(interval);
             }
         }, 100);
-        
+
         return () => clearInterval(interval);
     }, []);
 
@@ -85,7 +83,7 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
                                 {char === '-' ? '~' : char}
                             </span>
                         ))}
-                        <span 
+                        <span
                             className="inline-flex items-center justify-center bg-accent rounded-full"
                             style={{
                                 opacity: currentIndex >= brandName.length ? 1 : 0,
@@ -96,7 +94,7 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
                                 marginRight: '0.1em'
                             }}
                         ></span>
-                        <sup 
+                        <sup
                             className="text-accent ml-1"
                             style={{
                                 opacity: currentIndex >= brandName.length ? 1 : 0,
@@ -120,7 +118,7 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
 
                 {/* Side B: ULTRA PREMIUM DARK GLASS DASHBOARD - FIXED PROPERLY */}
                 <div className="w-full max-w-md flex items-center justify-center self-center">
-                    <div 
+                    <div
                         className="relative group w-full"
                         style={{
                             opacity: currentIndex >= brandName.length ? 1 : 0,
@@ -210,7 +208,7 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
                                     elements: {
                                         rootBox: "w-full m-0",
                                         card: "w-full max-w-md p-5 sm:p-6 pr-2 sm:pr-2 bg-transparent shadow-none",
-                                        
+
                                         // Header - Custom styling for brand name with curved hyphen
                                         header: "mb-3 text-center [&_.cl-headerTitle]:!text-white",
                                         headerTitle: "font-bold tracking-tight text-white text-2xl sm:text-3xl premium-font mb-0.5 text-center",
@@ -251,7 +249,7 @@ export const BrandLoginPage: React.FC<BrandLoginPageProps> = ({ onBack }) => {
                                         alertText: "text-gray-300 text-sm",
                                         identityPreviewText: "text-white",
                                         identityPreviewEditButton: "text-accent hover:text-accent/80",
-                                        
+
                                         // Hide unwanted elements
                                         badge: "hidden",
                                         internal_debugLink: "hidden",

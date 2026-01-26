@@ -1,5 +1,5 @@
 -- -------------------------------------------------------------
--- WEARE-STORY AUTOMATIC IMAGE REFRESH SCRIPT
+-- WEAR-STORY AUTOMATIC IMAGE REFRESH SCRIPT
 -- -------------------------------------------------------------
 -- Run this script in your Supabase SQL Editor to instantly
 -- replace all the random "scenery" images with curated,

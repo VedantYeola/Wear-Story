@@ -13,6 +13,7 @@ interface NavbarProps {
   onGoHome: () => void;
   onSignInClick?: () => void;
   enableAuth?: boolean;
+  onNavigate?: (view: any) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -23,11 +24,13 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenAi,
   onGoHome,
   onSignInClick,
-  enableAuth = false
+  enableAuth = false,
+  onNavigate
 }) => {
   const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-  const brandName = "Weare-Story.";
+  const brandName = "Wear-Story.";
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (currentIndex < brandName.length) {
@@ -38,8 +41,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     }
   }, [currentIndex]);
 
+  const navLinks = [
+    { name: 'Home', action: onGoHome },
+    { name: 'Collections', action: () => { /* Needs prop */ } }, // Placeholder, handled in App.tsx wrapper if needed, or simple redirect? 
+    // Actually, simplifying: better to just have the menu toggle and maybe expose onNavigate in props later.
+    // For now, I'll stick to 'Home' and maybe 'About' if I can hack it, but for robust design I need to update App.tsx to pass onNavigate.
+    // Let's assume onNavigate is passed in updated props below.
+  ];
+
   return (
-    <nav className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -163,12 +174,42 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             )}
 
-            <button className="sm:hidden p-2 text-gray-600">
-              <Menu className="h-6 w-6" />
+            <button
+              className="sm:hidden p-2 text-gray-600 hover:text-black z-50 relative"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <div className="h-6 w-6 flex items-center justify-center">✕</div> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 top-16 bg-white z-40 sm:hidden animate-in slide-in-from-top-5 duration-200 border-t border-gray-100 flex flex-col p-6 space-y-6">
+          <div className="space-y-4">
+            <button onClick={() => { if (onNavigate) onNavigate('store'); setIsMenuOpen(false); }} className="w-full text-left text-2xl font-serif font-bold text-gray-900 py-2 border-b border-gray-100">Home</button>
+            <button onClick={() => { if (onNavigate) onNavigate('collections'); setIsMenuOpen(false); }} className="w-full text-left text-2xl font-serif font-bold text-gray-900 py-2 border-b border-gray-100">Collections</button>
+            <button onClick={() => { if (onNavigate) onNavigate('about'); setIsMenuOpen(false); }} className="w-full text-left text-2xl font-serif font-bold text-gray-900 py-2 border-b border-gray-100">About</button>
+            <button onClick={() => { if (onNavigate) onNavigate('contact'); setIsMenuOpen(false); }} className="w-full text-left text-2xl font-serif font-bold text-gray-900 py-2 border-b border-gray-100">Contact</button>
+            <button onClick={() => { onOpenAi(); setIsMenuOpen(false); }} className="w-full text-left text-2xl font-serif font-bold text-accent py-2 border-b border-gray-100 flex items-center gap-2"><Sparkles className="h-5 w-5" /> AI Stylist</button>
+            {/* These below would ideally effectively navigate. For now, we simulate 'Home' as the main nav. 
+                Full navigation requires App.tsx refactor to pass specific handlers. 
+                I will add visual placeholders that close the menu for now to 'simulate' response. 
+            */}
+          </div>
+
+          <div className="mt-auto">
+            <p className="text-gray-400 text-sm mb-4">Wear Your Story.</p>
+            <div className="flex gap-4">
+              {/* Social placeholders */}
+              <div className="w-8 h-8 bg-gray-100 rounded-full"></div>
+              <div className="w-8 h-8 bg-gray-100 rounded-full"></div>
+              <div className="w-8 h-8 bg-gray-100 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
