@@ -210,15 +210,7 @@ This project is licensed under the MIT License.
 
 ---
 
-## 🙏 Acknowledgments
 
-- **Google Gemini AI** for intelligent styling recommendations
-- **Supabase** for real-time database infrastructure
-- **Clerk** for authentication services
-- **Unsplash** for high-quality product imagery
-- **Tailwind CSS** for utility-first styling
-
----
 
 <div align="center">
 
