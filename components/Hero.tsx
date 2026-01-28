@@ -69,7 +69,8 @@ export const Hero: React.FC<HeroProps> = ({ onShopNow }) => {
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover opacity-60 scale-105 transition-transform duration-[10s]"
+              className="w-full h-full object-cover opacity-60 scale-105 transition-transform"
+              style={{ transitionDuration: '10s' }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
           </div>
